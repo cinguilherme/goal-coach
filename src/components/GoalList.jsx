@@ -37,7 +37,7 @@ class GoalList extends Component {
                 {
                     this.props.goals.map((goal, index) => {
                         return(
-                            <GoalItem key={index} title={goal.title} />
+                            <GoalItem key={index} goal={goal} />
                         )
                     })
                 }

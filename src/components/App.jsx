@@ -6,6 +6,7 @@ import { firebaseapp } from '../firebase';
 
 import AddGoal from './AddGoal';
 import GoalList from './GoalList';
+import CompletedGoals from './CompletedGoals';
 
 class App extends Component {
 
@@ -16,18 +17,20 @@ class App extends Component {
 
     render() {
         return (
-            <div style={{margin: '10px'}}>
+            <div style={{ margin: '10px' }}>
 
                 <h3>Goal Coach</h3>
 
                 <AddGoal />
-                <hr/>
+                <hr />
 
                 <h4>Goals</h4>
                 <GoalList />
-                <hr/>
+                <hr />
 
-                App from component
+                <h4>Completed Goals</h4>
+                <CompletedGoals />
+                <hr />
 
                 <button className="btn btn-danger"
                     onClick={() => this.signOut()}>

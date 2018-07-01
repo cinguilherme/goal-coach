@@ -13,12 +13,12 @@ const store = createStore(reducer);
 
 firebaseapp.auth().onAuthStateChanged(user => {
     if (user) {
-        console.log('user has authed', user);
+        //console.log('user has authed', user);
         const { email } = user;
         store.dispatch(logUser(email));
         browserHistory.push('/app');
     } else {
-        console.log('not');
+        //console.log('not');
         browserHistory.push('/signin');
     }
 })

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { firebaseapp } from '../firebase';
 
 import AddGoal from './AddGoal';
+import GoalList from './GoalList';
 
 class App extends Component {
 
@@ -15,12 +16,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{margin: '10px'}}>
 
                 <h3>Goals</h3>
 
                 <AddGoal />
-                <div>goal list</div>
+                <GoalList />
 
                 App from component
 
@@ -34,7 +35,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('state', state);
     return {}
 }
 

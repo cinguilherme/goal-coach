@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
+import { goalRef } from "../firebase";
+
 class AddGoal extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             title: ''
@@ -10,8 +12,9 @@ class AddGoal extends Component {
     }
 
 
-    addGoal(){
-        console.log('this.state', this.state);
+    addGoal() {
+        console.log('addGoal evoked','this.state', this.state);
+        goalRef.push({ email: 'teste@teste.com', title: this.state.title });
     }
 
     render() {
@@ -23,7 +26,7 @@ class AddGoal extends Component {
                         placeholder="add goal"
                         className="form-control"
                         style={{ marginRight: '5px' }}
-                        onChange={(event) => this.setState({title: event.target.value})}
+                        onChange={(event) => this.setState({ title: event.target.value })}
                     />
 
                     <button className="btn btn-success"

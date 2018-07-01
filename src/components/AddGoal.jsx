@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux'
+
 import { goalRef } from "../firebase";
 
 class AddGoal extends Component {
@@ -13,8 +15,10 @@ class AddGoal extends Component {
 
 
     addGoal() {
-        console.log('addGoal evoked','this.state', this.state);
-        goalRef.push({ email: 'teste@teste.com', title: this.state.title });
+        console.log('addGoal evoked', 'this.state', this.state);
+        const { title } = this.state;
+        const { email } = this.props;
+        goalRef.push({ email, title });
     }
 
     render() {
@@ -42,4 +46,12 @@ class AddGoal extends Component {
     }
 }
 
-export default AddGoal;
+function mapStateToProps(state) {
+
+    const { email } = state;
+    return {
+        email
+    }
+}
+
+export default connect(mapStateToProps, null)(AddGoal);

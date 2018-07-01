@@ -18,10 +18,14 @@ class App extends Component {
         return (
             <div style={{margin: '10px'}}>
 
-                <h3>Goals</h3>
+                <h3>Goal Coach</h3>
 
                 <AddGoal />
+                <hr/>
+
+                <h4>Goals</h4>
                 <GoalList />
+                <hr/>
 
                 App from component
 
